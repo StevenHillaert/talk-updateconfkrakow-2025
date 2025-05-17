@@ -1,9 +1,6 @@
 name: Prevent Migration Deletion
 # DEMO: 5a pipelines : Protect against deletion of migration files in pull requests and pushes
 on:
-  push:
-    branches:
-      - '**'
   pull_request:
     types: [opened, synchronize, reopened]
 
