@@ -41,7 +41,7 @@ internal sealed class ConfirmBookingCommandHandler : ICommandHandler<ConfirmBook
 
         if (result.IsFailure)
         {
-            // DEMO: analysers : Sending from inside a handler is not recommended
+            // DEMO: 4a analyzers : sending from inside a handler is not recommended
             var cancelBooking = new CancelBookingCommand(booking.Id);
             Result cancelResult = await _sender.Send(cancelBooking, cancellationToken);
 

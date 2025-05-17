@@ -1,6 +1,7 @@
 ﻿using Bookify.Application.Abstractions.Authentication;
 using Bookify.Domain.Users;
 using Bookify.Infrastructure.Authentication.Models;
+// DEMO: 1b code style : order of usings
 using System.Net.Http.Json;
 
 namespace Bookify.Infrastructure.Authentication;
@@ -47,7 +48,7 @@ internal sealed class AuthenticationService : IAuthenticationService
         const string usersSegmentName = "users/";
 
         string? locationHeader = httpResponseMessage.Headers.Location?.PathAndQuery;
-
+        // DEMO: 1c code style : use null-coalescing assignment operator
         if (locationHeader is null)
         {
             throw new InvalidOperationException("Location header can't be null");

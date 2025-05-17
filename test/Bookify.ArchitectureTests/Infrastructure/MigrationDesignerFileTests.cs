@@ -9,7 +9,7 @@ public class MigrationDesignerFileTests
     [Fact]
     public void EveryMigration_ShouldHave_DesignerFile()
     {
-        // DEMO: Leveraging unit tests
+        // DEMO: 2a leveraging unit tests
         // Adjust the path as needed if your test project is not at the solution root
         string migrationsPath = Path.Combine("..", "..", "..", "..", "..", "src", "Bookify.Infrastructure", "Migrations");
         var migrationFiles = Directory

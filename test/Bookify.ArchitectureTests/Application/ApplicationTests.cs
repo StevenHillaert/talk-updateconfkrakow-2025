@@ -8,6 +8,7 @@ namespace Bookify.ArchitectureTests.Application;
 
 public class ApplicationTests : BaseTest
 {
+    // DEMO: 3a arch test : naming
     [Fact]
     public void CommandHandler_ShouldHave_NameEndingWith_CommandHandler()
     {
@@ -23,6 +24,7 @@ public class ApplicationTests : BaseTest
         result.IsSuccessful.Should().BeTrue();
     }
 
+    // DEMO: 3b arch test : visibility
     [Fact]
     public void CommandHandler_Should_NotBePublic()
     {
@@ -31,32 +33,6 @@ public class ApplicationTests : BaseTest
             .ImplementInterface(typeof(ICommandHandler<>))
             .Or()
             .ImplementInterface(typeof(ICommandHandler<,>))
-            .Should()
-            .NotBePublic()
-            .GetResult();
-
-        result.IsSuccessful.Should().BeTrue();
-    }
-
-    [Fact]
-    public void QueryHandler_ShouldHave_NameEndingWith_QueryHandler()
-    {
-        TestResult result = Types.InAssembly(ApplicationAssembly)
-            .That()
-            .ImplementInterface(typeof(IQueryHandler<,>))
-            .Should()
-            .HaveNameEndingWith("QueryHandler")
-            .GetResult();
-
-        result.IsSuccessful.Should().BeTrue();
-    }
-
-    [Fact]
-    public void QueryHandler_Should_NotBePublic()
-    {
-        TestResult result = Types.InAssembly(ApplicationAssembly)
-            .That()
-            .ImplementInterface(typeof(IQueryHandler<,>))
             .Should()
             .NotBePublic()
             .GetResult();

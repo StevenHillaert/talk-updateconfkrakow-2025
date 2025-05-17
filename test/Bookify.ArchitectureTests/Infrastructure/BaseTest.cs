@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using AccountingModule.Domain;
 using Bookify.Application.Abstractions.Messaging;
 using Bookify.Domain.Abstractions;
 using Bookify.Infrastructure;
@@ -14,4 +15,6 @@ public abstract class BaseTest
     protected static readonly Assembly InfrastructureAssembly = typeof(ApplicationDbContext).Assembly;
 
     protected static readonly Assembly PresentationAssembly = typeof(Program).Assembly;
+
+    protected static readonly Assembly AccountingModuleAssembly = typeof(TheAccountingModule).Assembly;
 }

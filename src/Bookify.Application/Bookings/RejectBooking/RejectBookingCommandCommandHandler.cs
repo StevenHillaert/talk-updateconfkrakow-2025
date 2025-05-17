@@ -5,20 +5,17 @@ using Bookify.Domain.Bookings;
 
 namespace Bookify.Application.Bookings.RejectBooking;
 
-internal sealed class RejectBookingCommandCommandHandler : ICommandHandler<RejectBookingCommand>
+public sealed class RejectBookingCommandHander : ICommandHandler<RejectBookingCommand>
 {
-    private readonly IDateTimeProvider _dateTimeProvider;
     private readonly IBookingRepository _bookingRepository;
     private readonly IUnitOfWork _unitOfWork;
 
-    public RejectBookingCommandCommandHandler(
-        IDateTimeProvider dateTimeProvider,
+    public RejectBookingCommandHander(
         IBookingRepository bookingRepository,
         IUnitOfWork unitOfWork)
     {
         _bookingRepository = bookingRepository;
         _unitOfWork = unitOfWork;
-        _dateTimeProvider = dateTimeProvider;
     }
 
     public async Task<Result> Handle(
@@ -32,7 +29,8 @@ internal sealed class RejectBookingCommandCommandHandler : ICommandHandler<Rejec
             return Result.Failure(BookingErrors.NotFound);
         }
 
-        Result result = booking.Reject(_dateTimeProvider.UtcNow);
+        // DEMO: 4c analyzers : don't use DateTime.Now
+        Result result = booking.Reject(DateTime.Now);
 
         if (result.IsFailure)
         {

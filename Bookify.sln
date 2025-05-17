@@ -24,6 +24,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.github\workflows\prevent-migration-deletion.yml = .github\workflows\prevent-migration-deletion.yml
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountingModule.Domain", "src\AccountingModule.Domain\AccountingModule.Domain.csproj", "{337CD563-6472-4FA0-9705-8238AD8040FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +52,10 @@ Global
 		{E2BABD95-C6B2-4DC3-BEBB-BA5A4FB16580}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2BABD95-C6B2-4DC3-BEBB-BA5A4FB16580}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2BABD95-C6B2-4DC3-BEBB-BA5A4FB16580}.Release|Any CPU.Build.0 = Release|Any CPU
+		{337CD563-6472-4FA0-9705-8238AD8040FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{337CD563-6472-4FA0-9705-8238AD8040FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{337CD563-6472-4FA0-9705-8238AD8040FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{337CD563-6472-4FA0-9705-8238AD8040FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +66,7 @@ Global
 		{A2F42B52-0328-4968-8EB0-B3CBCA02A808} = {D97FC30F-7D4C-4EB5-9784-1F403E0CA7CF}
 		{668B54A6-2BEC-42D5-B60F-709C24731C8C} = {D97FC30F-7D4C-4EB5-9784-1F403E0CA7CF}
 		{E2BABD95-C6B2-4DC3-BEBB-BA5A4FB16580} = {280A8A34-4FED-4ADE-ACDE-8A052F516543}
+		{337CD563-6472-4FA0-9705-8238AD8040FD} = {D97FC30F-7D4C-4EB5-9784-1F403E0CA7CF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7886086E-5FDE-4346-9331-C3CEE77E1E7A}

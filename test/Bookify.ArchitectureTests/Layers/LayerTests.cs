@@ -6,6 +6,18 @@ namespace Bookify.ArchitectureTests.Layers;
 
 public class LayerTests : BaseTest
 {
+    // DEMO: 3c arch test : layers
+    [Fact]
+    public void Bookify_ShouldNotHaveDependencyOn_AccountingModule()
+    {
+        TestResult result = Types.InAssembly(ApplicationAssembly)
+            .Should()
+            .NotHaveDependencyOn(AccountingModuleAssembly.GetName().Name)
+            .GetResult();
+
+        result.IsSuccessful.Should().BeTrue();
+    }
+
     [Fact]
     public void DomainLayer_ShouldNotHaveDependencyOn_ApplicationLayer()
     {

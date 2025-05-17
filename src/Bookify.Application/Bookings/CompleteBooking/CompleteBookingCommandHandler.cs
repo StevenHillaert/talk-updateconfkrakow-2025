@@ -1,4 +1,5 @@
-﻿using Bookify.Application.Abstractions.Clock;
+﻿using AccountingModule.Domain;
+using Bookify.Application.Abstractions.Clock;
 using Bookify.Application.Abstractions.Messaging;
 using Bookify.Domain.Abstractions;
 using Bookify.Domain.Bookings;
@@ -23,6 +24,10 @@ internal sealed class CompleteBookingCommandHandler : ICommandHandler<CompleteBo
 
     public async Task<Result> Handle(CompleteBookingCommand request, CancellationToken cancellationToken)
     {
+        // DEMO: 3c arch test : layers
+        var accounting = new TheAccountingModule();
+        accounting.DoAccounting();
+
         Booking? booking = await _bookingRepository.GetByIdAsync(request.BookingId, cancellationToken);
 
         if (booking is null)
