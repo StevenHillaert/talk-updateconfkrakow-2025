@@ -37,17 +37,15 @@ internal sealed class ReserveBookingCommandHandler : ICommandHandler<ReserveBook
     {
         User? user = await _userRepository.GetByIdAsync(request.UserId, cancellationToken);
 
-        if (user is null)
-        {
+        if (user is null) {
             return Result.Failure<Guid>(UserErrors.NotFound);
         }
 
         Apartment? apartment = await _apartmentRepository.GetByIdAsync(request.ApartmentId, cancellationToken);
 
-        if (apartment is null)
-        {
+        if (apartment is null) 
             return Result.Failure<Guid>(ApartmentErrors.NotFound);
-        }
+        
 
         var duration = DateRange.Create(request.StartDate, request.EndDate);
 

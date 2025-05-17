@@ -1,7 +1,9 @@
 ﻿using Bookify.Application.Abstractions.Clock;
 using Bookify.Application.Abstractions.Messaging;
+using Bookify.Application.Bookings.CancelBooking;
 using Bookify.Domain.Abstractions;
 using Bookify.Domain.Bookings;
+using MediatR;
 
 namespace Bookify.Application.Bookings.ConfirmBooking;
 
@@ -10,15 +12,18 @@ internal sealed class ConfirmBookingCommandHandler : ICommandHandler<ConfirmBook
     private readonly IDateTimeProvider _dateTimeProvider;
     private readonly IBookingRepository _bookingRepository;
     private readonly IUnitOfWork _unitOfWork;
+    private readonly ISender _sender;
 
     public ConfirmBookingCommandHandler(
         IDateTimeProvider dateTimeProvider,
         IBookingRepository bookingRepository,
-        IUnitOfWork unitOfWork)
+        IUnitOfWork unitOfWork,
+        ISender sender)
     {
         _dateTimeProvider = dateTimeProvider;
         _bookingRepository = bookingRepository;
         _unitOfWork = unitOfWork;
+        _sender = sender;
     }
 
     public async Task<Result> Handle(
@@ -36,8 +41,11 @@ internal sealed class ConfirmBookingCommandHandler : ICommandHandler<ConfirmBook
 
         if (result.IsFailure)
         {
-            
-            return result;
+            // DEMO: analysers : Sending from inside a handler is not recommended
+            var cancelBooking = new CancelBookingCommand(booking.Id);
+            Result cancelResult = await _sender.Send(cancelBooking, cancellationToken);
+
+            return cancelResult;
         }
 
         await _unitOfWork.SaveChangesAsync(cancellationToken);
