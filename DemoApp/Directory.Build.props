@@ -1,0 +1,20 @@
+<Project>
+  <PropertyGroup>
+    <AnalysisLevel>latest</AnalysisLevel>
+    <AnalysisMode>All</AnalysisMode>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
+    <EnforceCodeStyleInBuild>false</EnforceCodeStyleInBuild>
+  </PropertyGroup>
+	<!-- DEMO: X : manage analyzers in the solution level instead of project level -->
+	<ItemGroup>
+        <PackageReference Include="SonarAnalyzer.CSharp" Version="9.17.0.82934">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>	   
+    </ItemGroup>
+
+	<ItemGroup>
+		
+	</ItemGroup>
+</Project>
