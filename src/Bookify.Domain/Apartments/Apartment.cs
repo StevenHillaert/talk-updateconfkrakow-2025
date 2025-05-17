@@ -51,11 +51,11 @@ public sealed class Apartment : Entity
     {
         var apartment = new Apartment(
             Guid.NewGuid(),
-            name, 
-            description, 
-            address, 
-            price, 
-            cleaningFee, 
+            name,
+            description,
+            address,
+            price,
+            cleaningFee,
             amenities.ToList());
 
         return Result.Success(apartment);

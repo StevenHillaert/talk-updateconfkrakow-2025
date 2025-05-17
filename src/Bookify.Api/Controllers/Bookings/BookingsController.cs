@@ -1,15 +1,15 @@
 ﻿using Asp.Versioning;
-using Bookify.Application.Bookings.CompleteBooking;
 using Bookify.Application.Bookings.CancelBooking;
+using Bookify.Application.Bookings.CompleteBooking;
 using Bookify.Application.Bookings.ConfirmBooking;
 using Bookify.Application.Bookings.GetBooking;
+using Bookify.Application.Bookings.GetBookings;
 using Bookify.Application.Bookings.RejectBooking;
 using Bookify.Application.Bookings.ReserveBooking;
 using Bookify.Domain.Abstractions;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Bookify.Application.Bookings.GetBookings;
 
 namespace Bookify.Api.Controllers.Bookings;
 
@@ -75,8 +75,8 @@ public class BookingsController : ControllerBase
 
         Result result = await _sender.Send(update, cancellationToken);
 
-        if(result.IsFailure)
-        
+        if (result.IsFailure)
+
         {
             return BadRequest(result.Error);
         }
@@ -91,8 +91,8 @@ public class BookingsController : ControllerBase
 
         Result result = await _sender.Send(update, cancellationToken);
 
-        if(result.IsFailure)
-        
+        if (result.IsFailure)
+
         {
             return BadRequest(result.Error);
         }
@@ -107,8 +107,8 @@ public class BookingsController : ControllerBase
 
         Result result = await _sender.Send(update, cancellationToken);
 
-        if(result.IsFailure)
-        
+        if (result.IsFailure)
+
         {
             return BadRequest(result.Error);
         }

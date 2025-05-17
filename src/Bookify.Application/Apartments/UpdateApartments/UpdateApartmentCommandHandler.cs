@@ -20,7 +20,7 @@ internal sealed class UpdateApartmentCommandHandler : ICommandHandler<UpdateApar
 
     public async Task<Result> Handle(UpdateApartmentCommand request, CancellationToken cancellationToken)
     {
-        Apartment? apartment= await _apartmentRepository.GetByIdAsync(request.ApartmentId, cancellationToken);
+        Apartment? apartment = await _apartmentRepository.GetByIdAsync(request.ApartmentId, cancellationToken);
 
         if (apartment is null)
         {

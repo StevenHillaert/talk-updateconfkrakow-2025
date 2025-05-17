@@ -19,10 +19,10 @@ internal sealed class AddApartmentCommandHandler : ICommandHandler<AddApartmentC
     public async Task<Result> Handle(AddApartmentCommand request, CancellationToken cancellationToken)
     {
         var adressResult = new Address(
-            request.Country, 
-            request.State, 
-            request.ZipCode, 
-            request.City, 
+            request.Country,
+            request.State,
+            request.ZipCode,
+            request.City,
             request.Street);
 
         var priceResult = new Money(

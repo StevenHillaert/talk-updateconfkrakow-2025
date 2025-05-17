@@ -1,7 +1,7 @@
-﻿using Bookify.Application.Abstractions.Caching;
-using Microsoft.Extensions.Caching.Distributed;
-using System.Buffers;
+﻿using System.Buffers;
 using System.Text.Json;
+using Bookify.Application.Abstractions.Caching;
+using Microsoft.Extensions.Caching.Distributed;
 
 namespace Bookify.Infrastructure.Caching;
 

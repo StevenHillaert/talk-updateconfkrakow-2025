@@ -1,8 +1,8 @@
-﻿using Bookify.ArchitectureTests.Infrastructure;
+﻿using System.Reflection;
+using Bookify.ArchitectureTests.Infrastructure;
 using Bookify.Domain.Abstractions;
 using FluentAssertions;
 using NetArchTest.Rules;
-using System.Reflection;
 
 namespace Bookify.ArchitectureTests.Domain;
 

@@ -1,8 +1,8 @@
 ﻿using Asp.Versioning;
 using Bookify.Application.Reviews.AddReview;
 using Bookify.Application.Reviews.DeleteReview;
-using Bookify.Application.Reviews.UpdateReview;
 using Bookify.Application.Reviews.GetReview;
+using Bookify.Application.Reviews.UpdateReview;
 using Bookify.Domain.Abstractions;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;

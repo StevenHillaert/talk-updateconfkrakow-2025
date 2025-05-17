@@ -43,14 +43,14 @@ public class ApartmentsController : ControllerBase
         var command = new AddApartmentCommand(
             request.Name,
             request.Description,
-            request.Country, 
-            request.State, 
-            request.ZipCode, 
-            request.City, 
+            request.Country,
+            request.State,
+            request.ZipCode,
+            request.City,
             request.Street,
-            request.PriceAmount, 
+            request.PriceAmount,
             request.PriceCurrency,
-            request.CleaningFeeAmount, 
+            request.CleaningFeeAmount,
             request.CleaningFeeCurrency,
             request.Amenities);
 
@@ -65,19 +65,19 @@ public class ApartmentsController : ControllerBase
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> UpdateApartment(Guid id,UpdateApartmentRequest request, CancellationToken cancellationToken)
+    public async Task<IActionResult> UpdateApartment(Guid id, UpdateApartmentRequest request, CancellationToken cancellationToken)
     {
         var update = new UpdateApartmentCommand(
             id,
             request.PriceAmount,
             request.PriceAmountCurrency,
-            request.CleaningFeeAmount, 
+            request.CleaningFeeAmount,
             request.CleaningFeeCurrency,
             request.Amenities);
 
         Result result = await _sender.Send(update, cancellationToken);
 
-        if(result.IsFailure)
+        if (result.IsFailure)
         {
             return BadRequest(result.Error);
         }

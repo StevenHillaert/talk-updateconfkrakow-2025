@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Authentication;
-using Microsoft.Extensions.DependencyInjection;
-using System.Security.Claims;
+﻿using System.Security.Claims;
 using Bookify.Domain.Users;
 using Bookify.Infrastructure.Authentication;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.JsonWebTokens;
 
 namespace Bookify.Infrastructure.Authorization;
