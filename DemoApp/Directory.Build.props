@@ -8,9 +8,13 @@
   </PropertyGroup>
 	<!-- DEMO: X : manage analyzers in the solution level instead of project level -->
 	<ItemGroup>
-    <PackageReference Include="SonarAnalyzer.CSharp" Version="9.17.0.82934">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
+        <PackageReference Include="SonarAnalyzer.CSharp" Version="9.17.0.82934">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>	   
+    </ItemGroup>
+
+	<ItemGroup>
+		
+	</ItemGroup>
 </Project>
