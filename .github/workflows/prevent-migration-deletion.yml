@@ -17,7 +17,7 @@ jobs:
 
       - name: Check for deleted migration files
         run: |
-          deleted=$(git diff --name-status ${{ github.event.pull_request.base.sha }}...${{ github.event.pull_request.head.sha }} | grep '^D' | grep 'src/Bookify.Infrastructure/Migrations/.*\.cs' || true)
+          deleted=$(git diff --name-status ${{ github.event.pull_request.base.sha }}...${{ github.event.pull_request.head.sha }} | grep '^D' | grep 'DemoApp/src/Bookify.Infrastructure/Migrations/.*\.cs' || true)
           if [ -n "$deleted" ]; then
             echo "Error: Migration files deleted in this PR:"
             echo "$deleted"
