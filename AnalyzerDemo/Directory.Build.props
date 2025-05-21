@@ -1,0 +1,9 @@
+<Project>
+  <PropertyGroup>
+	  <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+	  <CodeAnalysisTreatWarningsAsErrors>false</CodeAnalysisTreatWarningsAsErrors>
+	  <EnforceCodeStyleInBuild>false</EnforceCodeStyleInBuild>
+  </PropertyGroup>	
+	<ItemGroup>    
+  </ItemGroup>
+</Project>

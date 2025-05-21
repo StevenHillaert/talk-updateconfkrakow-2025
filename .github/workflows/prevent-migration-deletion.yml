@@ -1,0 +1,25 @@
+# DEMO: 5a pipelines : Protect against deletion of migration files in pull requests and pushes
+name: Prevent Migration Deletion
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  check-migration-deletion:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch all history so we can diff
+
+      - name: Fetch all branches
+        run: git fetch --all
+
+      - name: Check for deleted migration files
+        run: |
+          deleted=$(git diff --name-status ${{ github.event.pull_request.base.sha }}...${{ github.event.pull_request.head.sha }} | grep '^D' | grep 'DemoApp/src/Bookify.Infrastructure/Migrations/.*\.cs' || true)
+          if [ -n "$deleted" ]; then
+            echo "Error: Migration files deleted in this PR:"
+            echo "$deleted"
+            exit 1
+          fi
