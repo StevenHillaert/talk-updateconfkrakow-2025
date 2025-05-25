@@ -9,7 +9,7 @@
 
   <PropertyGroup>
     <PackageId>KrakowAnalyzers</PackageId>
-    <PackageVersion>1.0.1.0</PackageVersion>
+    <PackageVersion>1.0.4.0</PackageVersion>
     <Authors>StevenHillaert</Authors>
     <PackageLicenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</PackageLicenseUrl>
     <PackageProjectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</PackageProjectUrl>

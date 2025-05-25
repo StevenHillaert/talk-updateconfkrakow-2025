@@ -10,17 +10,13 @@ public sealed class RejectBookingCommandHander : ICommandHandler<RejectBookingCo
     private readonly IBookingRepository _bookingRepository;
     private readonly IUnitOfWork _unitOfWork;
 
-    public RejectBookingCommandHander(
-        IBookingRepository bookingRepository,
-        IUnitOfWork unitOfWork)
+    public RejectBookingCommandHander(IBookingRepository bookingRepository, IUnitOfWork unitOfWork)
     {
         _bookingRepository = bookingRepository;
         _unitOfWork = unitOfWork;
     }
 
-    public async Task<Result> Handle(
-        RejectBookingCommand request,
-        CancellationToken cancellationToken)
+    public async Task<Result> Handle(RejectBookingCommand request, CancellationToken cancellationToken)
     {
         Booking? booking = await _bookingRepository.GetByIdAsync(request.BookingId, cancellationToken);
 
@@ -30,7 +26,7 @@ public sealed class RejectBookingCommandHander : ICommandHandler<RejectBookingCo
         }
 
         // DEMO: 4c analyzers : don't use DateTime.Now
-        Result result = booking.Reject(DateTime.Now);
+        Result result = booking.Reject(DateTime.UtcNow);
 
         if (result.IsFailure)
         {
