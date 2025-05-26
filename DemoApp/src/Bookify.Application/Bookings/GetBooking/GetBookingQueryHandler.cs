@@ -48,6 +48,7 @@ internal sealed class GetBookingQueryHandler : IQueryHandler<GetBookingQuery, Bo
         }
 
         // DEMO: 1d code style : commented code...
+        // string code = "Code exists or it doesn't, no quantum superposition allowed";
 
         return booking;
     }
