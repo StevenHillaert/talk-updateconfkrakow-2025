@@ -22,6 +22,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 		Directory.Build.props = Directory.Build.props
 		nuget.config = nuget.config
+		..\.github\workflows\prevent-migration-deletion.yml = ..\.github\workflows\prevent-migration-deletion.yml
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountingModule.Domain", "src\AccountingModule.Domain\AccountingModule.Domain.csproj", "{337CD563-6472-4FA0-9705-8238AD8040FD}"
